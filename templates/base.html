@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load cms_tags sekizai_tags compress %}
+    <meta charset="utf-8">
+    <title>{% page_attribute page_title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% page_attribute meta_description %}"/>
+    <meta name="keywords" content="{% page_attribute meta_keywords %}"/>
+    <meta name="author" content="Marc Riegel">
+
+    {% compress css %}
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding-top: 100px;
+        }
+
+        footer {
+            margin-bottom: -20px !important;
+        }
+    </style>
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/bootswatch.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/highlight.css" rel="stylesheet">
+    {% endcompress %}
+
+
+</head>
+
+<body data-spy="scroll" id="top" data-target=".subnav" data-offset="160">
+
+<!-- Navbar
+    ================================================== -->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Marc Riegel</a>
+
+            <div class="nav-collapse collapse" id="main-menu">
+                <ul class="nav" id="main-menu-left">
+                    <li><a href="/">Home</a></li>
+                    <li class="divider-vertical"></li>
+
+                    <li><a href="https://github.com/mrcrgl/moodle">Moodle</a></li>
+                    <li><a href="https://github.com/mrcrgl/node-querybuilder">Querybuilder</a></li>
+                    <li><a href="https://github.com/mrcrgl/node-keygen">Keygen</a></li>
+                    <li><a href="https://github.com/mrcrgl/node-straight">Straight</a></li>
+                </ul>
+                <ul class="nav pull-right" id="main-menu-right">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+{% block base_content %}
+{% endblock %}
+
+</div>
+<!-- /container -->
+
+{% block footer %}
+    <footer class="well">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <h4>Take notice of</h4>
+
+                    <ul class="nav nav-list">
+                        <li><a href="http://p.boxnet.eu" target="_blank"
+                               title="Another Paste utility, focused on privacy,">Pastebox @ boxnet.eu</a></li>
+                    </ul>
+                </div>
+
+                <div class="span4">
+                    <h4>Contribute, Follow or ^5 me</h4>
+
+                    <ul class="nav nav-list">
+                        <li><a href="https://github.com/mrcrgl" target="_blank" title="Marc Riegel on Github">Github</a>
+                        </li>
+                        <li><a href="https://geekli.st/Horst" target="_blank"
+                               title="Marc Riegel on Geekli.st">Geekli.st</a></li>
+                        <li><a href="https://www.xing.com/profile/Marc_Riegel" target="_blank"
+                               title="Marc Riegel on Xing">Xing</a></li>
+                    </ul>
+                </div>
+
+                <div class="span4">
+                    <a href="http://www.w3.org/html/logo/" target="_blank">
+                        <img src="http://www.w3.org/html/logo/badge/html5-badge-v-css3-device-performance-semantics.png"
+                             width="38" height="202"
+                             alt="HTML5 Powered with CSS3 / Styling, Device Access, Performance &amp; Integration, and Semantics"
+                             title="HTML5 Powered with CSS3 / Styling, Device Access, Performance &amp; Integration, and Semantics">
+                    </a>
+                </div>
+            </div>
+            <!-- /row -->
+
+            <hr/>
+
+            <div class="row">
+                <div class="span8 offset2">
+                    <p>&copy; Marc Riegel 2013 / Built with <a href="http://nodejs.org/" target="_blank"
+                                                               title="Serverside javascript">node.js</a>, <a
+                            href="http://twitter.github.io/bootstrap/" target="_blank"
+                            title="Sleek, intuitive, and powerful front-end framework for faster and easier web development.">Bootstrap</a>,
+                        <a href="http://paularmstrong.github.io/swig/" target="_blank"
+                           title="A Node.js and Browser-based JavaScript Template Engine">Swig</a> and a <a
+                                href="http://en.wikipedia.org/wiki/Cup_of_coffee" target="_blank" title="little helper">cup
+                            of coffee</a> / See sourcecode on <a href="https://github.com/mrcrgl/marclab"
+                                                                 target="_blank" title="Project marclab on Github">Github</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+
+<!-- ================================================== -->
+
+<script src="//codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+{% compress js %}
+
+    <script src="{{ STATIC_URL }}js/jquery.smooth-scroll.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/bootswatch.js"></script>
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-40898907-1', 'marclab.de');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    /*
+    $(document).ready(function() {
+        $('div.highlight').each(function(i, e) {hljs.highlightBlock(e)});
+    });
+    */
+</script>
+
+<script src="{{ STATIC_URL }}js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#contact-form").validate({
+            highlight: function(element) {
+                console.log("validate.highlight called.");
+                $(element).closest('.control-group').removeClass('success').addClass('error');
+            },
+            success: function(element) {
+                console.log("validate.success called.");
+                console.log(element);
+                $('#' + $(element).attr('for'))
+                        .closest('.control-group').removeClass('error').addClass('success');
+
+            },
+            errorPlacement: function(error, element) {
+                console.log("validate.errorPlacement called.");
+
+                element.siblings('.validate').remove();
+
+                var eelement = $('<span class="help-inline validate"></span>');
+                eelement.text(error.text());
+                eelement.insertAfter(element);
+            }
+        });
+    });
+</script>
+{% endcompress %}
+
+</body>
+</html>
