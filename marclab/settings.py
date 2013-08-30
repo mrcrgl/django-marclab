@@ -14,6 +14,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+#if 'VCAP_SERVICES' in os.environ:
+#	DEBUG = False
+#	TEMPLATE_DEBUG = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
