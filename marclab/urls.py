@@ -6,5 +6,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
+    url(r'^environment/$', 'app.views.print_env'),
     url(r'^', include('cms.urls')),
 )

@@ -173,6 +173,7 @@ INSTALLED_APPS = (
 #    'cms.plugins.text', #
     'cms.plugins.video',
     'cms.plugins.twitter',
+    'app',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = {
