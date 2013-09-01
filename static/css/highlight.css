@@ -1,0 +1,12 @@
+code, code p {
+    margin: 0;
+    color: white;
+}
+
+code .comment {
+    color: lightgrey;
+}
+
+code .keyword {
+    font-weight: bold;
+}
